@@ -1,0 +1,61 @@
+model:
+  model_name: 'M2NO'
+  num_layer: 5
+  in_channels: 3
+  out_channels: 1
+  k: 8
+  c: 2
+  grid_levels: [1, 1, 2, 2, 2, 3]
+  padding_mode: 'circular'
+  bias: True
+  base: 'legendre'
+  norm: True
+  activation: 'gelu'
+  resolutions: [64, 64]
+
+data:
+  dataset: 'NavierStokes'
+  data_path: "/ai/gno/DATA/ns/ns_V1e-5_N1200_T20.mat"
+  raw_resolution: [64, 64, 20]
+  sample_resolution: [64, 64, 20]
+  eval_resolution: [64, 64, 20]
+  train_batchsize: 16
+  eval_batchsize: 16
+  in_t: 1
+  out_t: 1
+  duration_t: 10
+  train_ratio: 0.8
+  valid_ratio: 0.1
+  test_ratio: 0.1
+  subset: False
+  subset_ratio: 0.1
+  normalize: True
+  normalizer_type: 'PGN'
+
+train:
+  random_seed: 42
+  cuda: True
+  device: 0
+  epochs: 500
+  patience: -1
+  eval_freq: 1
+  saving_best: True
+  saving_checkpoint: False
+  checkpoint_freq: 100
+
+optimize:
+  optimizer: 'Adam'
+  lr: 0.001
+  weight_decay: 0.0001
+
+schedule:
+  scheduler: 'StepLR'
+  step_size: 100
+  gamma: 0.5
+
+log:
+  verbose: True
+  log: True
+  log_dir: './logs'
+  wandb: False
+  wandb_project: ''

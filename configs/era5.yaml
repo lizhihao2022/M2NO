@@ -1,0 +1,61 @@
+model:
+  model_name: 'M2NO'
+  num_layer: 3
+  in_channels: 3
+  out_channels: 1
+  k: 4
+  c: 2
+  grid_levels: [1, 1, 1, 1, 1]
+  padding_mode: 'circular'
+  bias: True
+  base: 'legendre'
+  norm: True
+  activation: 'gelu'
+  resolutions: [512, 512]
+
+data:
+  dataset: 'ERA5'
+  data_path: "/ai/gno/DATA/era5/20d/era_512_512.pt"
+  prop: 'temp'
+  raw_resolution: [512, 512, 24]
+  sample_resolution: [512, 512, 24]
+  eval_resolution: [512, 512, 24]
+  in_t: 1
+  out_t: 1
+  duration_t: 23
+  eval_batchsize: 16
+  train_batchsize: 16
+  normalize: True
+  normalizer_type: 'PGN'
+  train_day: 12
+  valid_day: 4
+  test_day: 4
+  sub: False
+
+train:
+  random_seed: 0
+  cuda: True
+  device: 3
+  epochs: 500
+  patience: -1
+  eval_freq: 1
+  saving_best: True
+  saving_checkpoint: False
+  checkpoint_freq: 100
+
+optimize:
+  optimizer: 'Adam'
+  lr: 0.001
+  weight_decay: 0.0001
+
+schedule:
+  scheduler: 'StepLR'
+  step_size: 100
+  gamma: 0.5
+
+log:
+  verbose: True
+  log: True
+  log_dir: './logs'
+  wandb: False
+  wandb_project: ''
