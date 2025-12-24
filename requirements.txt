@@ -1,0 +1,9 @@
+h5py==3.13.0
+matplotlib==3.10.8
+numpy==2.4.0
+PyYAML==6.0.3
+scipy==1.16.3
+sympy==1.12.1
+torch==2.3.1
+tqdm==4.66.4
+wandb==0.23.1
