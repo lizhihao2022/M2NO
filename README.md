@@ -2,8 +2,8 @@
 
 [![KDD 2026](https://img.shields.io/badge/KDD-2026-1f6feb)](https://kdd2026.kdd.org/)
 [![arXiv](https://img.shields.io/badge/arXiv-2406.04822-b31b1b.svg)](https://arxiv.org/abs/2406.04822)
-<!-- [![DOI](https://img.shields.io/badge/DOI-10.1145%2F3770854.3780179-0b6)](https://doi.org/10.1145/3770854.3780179) -->
-<!-- [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) -->
+[![DOI](https://zenodo.org/badge/1112103209.svg)](https://doi.org/10.5281/zenodo.18041574)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ![cover](./assets/cover.jpg)
 
